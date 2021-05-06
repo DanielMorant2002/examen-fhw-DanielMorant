@@ -13,7 +13,7 @@
         name: "{{ usuari }}"
         group: user
         state: present
-        password: 123
+        password: '123'
         createhome: yes
         home: "{{ home }}"
     #- name: test
