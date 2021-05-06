@@ -1,0 +1,11 @@
+---
+- name: Hacer update
+  apt:
+    update_cache: yes
+
+- name: Hacer upgrade
+  apt: 
+    upgrade: yes
+  
+
+...

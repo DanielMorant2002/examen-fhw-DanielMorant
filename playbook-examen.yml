@@ -1,0 +1,31 @@
+---
+- name: play 1
+  become: yes
+  hosts: webservers
+  tasks:
+    - name: crear group
+      group:
+        name: user
+        state: present
+
+    - name: crear usuario
+      user:
+        name: "{{ usuari }}"
+        group: user
+        state: present
+        password: 123
+        createhome: yes
+        home: "{{ home }}"
+    #- name: test
+          #debug:
+            #msg: "{{ env }}"
+  roles:
+    - role: update_upgrade
+
+- name: play 2
+  become: yes
+  hosts: webservers
+  tasks:
+    - include: copiar.yml
+
+...

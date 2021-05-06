@@ -1,0 +1,6 @@
+---
+- name: copiar fichero admin.txt
+  copy:
+    src: /home/vagrant/admin.txt
+    dest: /tmp/{{ nombre }}.txt
+...
